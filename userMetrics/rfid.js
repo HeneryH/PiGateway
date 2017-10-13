@@ -56,6 +56,8 @@ exports.events = {
                               },
 };
 
+// Sounds at https://freesound.org/people/pointparkcinema/ 
+
 //example of defining a property to use anywhere in the app/events or in other custom functions
 exports.ONEDAYHOURS = 24;
                                                
