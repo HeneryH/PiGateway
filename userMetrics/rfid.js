@@ -6,10 +6,10 @@ exports.timeoutOffset = require('../metrics.js').timeoutOffset;
 exports.futureDateOffset = require('../metrics.js').futureDateOffset;
 
 exports.metrics = {
-  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 01', logValue:1},
-  RFID_UID : { name:'UID', regexp:/yyyy/i, value:'Card 02', logValue:2},
-  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 03', logValue:3},
-  RFID_UID : { name:'UID', regexp:/[0-9a-fA-F]+/i, value:'Unknown Card', logValue:0},
+  RFID_UID : { name:'UID', regexp:/UID:xxxx/i, value:'Card 01', logValue:1},
+  RFID_UID : { name:'UID', regexp:/UID:yyyy/i, value:'Card 02', logValue:2},
+  RFID_UID : { name:'UID', regexp:/UID:xxxx/i, value:'Card 03', logValue:3},
+  RFID_UID : { name:'UID', regexp:/UID:[0-9a-fA-F]+/i, value:'Unknown Card', logValue:0},
 };
 
 //exports.metrics = {
