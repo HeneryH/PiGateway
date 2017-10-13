@@ -6,10 +6,10 @@ exports.timeoutOffset = require('../metrics.js').timeoutOffset;
 exports.futureDateOffset = require('../metrics.js').futureDateOffset;
 
 exports.metrics = {
-  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 01'},
-  RFID_UID : { name:'UID', regexp:/yyyy/i, value:'Card 02'},
-  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 03'},
-  RFID_UID : { name:'UID', regexp:/[0-9a-fA-F]+/i, value:'Unknown Card'},
+  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 01', logValue:1},
+  RFID_UID : { name:'UID', regexp:/yyyy/i, value:'Card 02', logValue:2},
+  RFID_UID : { name:'UID', regexp:/xxxx/i, value:'Card 03', logValue:3},
+  RFID_UID : { name:'UID', regexp:/[0-9a-fA-F]+/i, value:'Unknown Card', logValue:0},
 };
 
 //exports.metrics = {
@@ -45,7 +45,7 @@ exports.events = {
                                                 if (node.metrics['UID'] && (
                                                            node.metrics['UID'].value == 'Card 01' ||
 //                                                           node.metrics['UID'].value == 'Card 02' ||
-//                                                           node.metrics['UID'].value == 'Card 03' ||
+                                                           node.metrics['UID'].value == 'Card 03' ||
                                                            node.metrics['UID'].value == 'Card 04'
                                                            ) {
                                                       io.sockets.emit('PLAYSOUND', 'sounds/access_granted.wav'); 
@@ -53,7 +53,8 @@ exports.events = {
                                                       io.sockets.emit('PLAYSOUND', 'sounds/access_denied.wav'); 
                                                };                  <-- what is with this semicolon?  
                                          } 
-                              },};
+                              },
+};
 
 //example of defining a property to use anywhere in the app/events or in other custom functions
 exports.ONEDAYHOURS = 24;
